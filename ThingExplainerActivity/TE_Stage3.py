@@ -47,7 +47,7 @@ textbox = tk.Text(root)
 textbox.config(borderwidth = 10)
 textbox.pack()
 
-btnProcess = tk.Button(root, text = "Process Text", command = runMe)
+btnProcess = tk.Button(root, text = "Process Word", command = runMe)
 btnProcess.pack(fill = tk.BOTH, expand = 1)
 
 root.mainloop()
