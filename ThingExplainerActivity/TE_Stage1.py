@@ -1,6 +1,6 @@
 import tkinter as tk
 
-print("Stage 1")
+print("Stage 1 - TE")
 
 #VARIABLES: MUST BE CONTAINED IN LIST
 a = [1]

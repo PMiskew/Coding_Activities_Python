@@ -1,9 +1,9 @@
 import tkinter as tk
 
-print("Stage 6")
+print("Stage 7")
 #VARIABLES: MUST BE CONTAINED IN LIST
-a = [1]
-list = ["cat","dog","fish","monkey","donkey"]
+badwords = []
+list = []
 charList = [" ","\n","\r","?","!","."]
 #We need /r and /n since when the keystoke is read as an input "Return" resisters as /r
 #This gets translated into the string as a new line, which is stored as /n
@@ -48,13 +48,13 @@ def processText1(text):
 		wordClean = text[0:len(text) - offset]
 
 	if wordClean not in list:
+		badwords.append(wordClean)
 		if locEnd != 0:
 			newText = text[:locEnd + 1]
 		else: #This else accounts for teh case of one word text
 			newText = ""
-	
-	print(wordClean)
-	print(newText)
+
+	print(badwords)
 	return newText
 	
 	
@@ -65,6 +65,16 @@ textbox = tk.Text(root)
 textbox.config(borderwidth = 10)
 textbox.pack()
 textbox.bind("<KeyRelease>",runMe)
+
+#Load List
+wordFile = open("wordlist.txt",'r')
+for line in wordFile:
+	list.append(wordFile.readline()[:-1])
+
+print(list)
+
+
+
 
 root.mainloop()
 print("END PROGRAM")

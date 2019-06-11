@@ -8,9 +8,6 @@ charList = [" ","\r","?","!","."]
 #FUNCTIONS:
 def runMe(event):
 	
-	print(event.keycode)
-	print(event.char)
-	
 	if event.char in charList:
 		text = textbox.get("1.0",tk.END)
 
@@ -20,12 +17,42 @@ def runMe(event):
 		text = text[:-1]
 
 		#processText removes the last word that was entered
-		text = processText(text)
+		text = processText1(text)
 		textbox.delete("0.0",tk.END)
 		textbox.insert("0.0",text)
 		print(text)
 
+def processText1(text):
 
+	newText = text #This is the text to send back that will update the display - Defaults to text
+	wordClean = text #This stores the last word in the sentence to inspect - defaults to text
+	
+	#This loop finds the space before the last word.  This will allow us to pull out
+	#last word store it in wordClean and then process it to see if it is valid.
+	#If the loop gets all the way to 0 then there is only one word on the display
+	locEnd = 0
+	for i in range(len(text) - 2,-1,-1):
+		if text[i] == " ":
+			locEnd = i
+			break;
+	
+	#This pulls out the last word and stores in wordClean
+	if locEnd != 0:
+		wordClean = text[locEnd + 1:len(text) - 1]
+	else:
+		wordClean = text[0:len(text) - 1]
+
+	#Checks to see if wordClean is a valid word.  If it is not then
+	#the program removes it and stores the result in newText
+	if wordClean not in list:
+		if locEnd != 0:
+			newText = text[:locEnd + 1]
+		else: #This else accounts for teh case of one word text
+			newText = ""
+	print(newText)
+	#This sends back the text to be processed	
+	return newText
+	
 def processText(text):
 
 	newText = text
@@ -33,12 +60,15 @@ def processText(text):
 	
 	word = text[:-1] #assume text is only one word
 
+
+
 	#look for space starting at end of string.  If a space is found 
 	#store last word in word and store the index of the space
 	for i in range(len(text) - 2, -1, -1):
 		if (text[i] == " "):
 			loc = i
 			word = text[loc+1:len(text) - 1]	
+	
 			break;	#break once found
 
 
