@@ -8,3 +8,6 @@ model = app.models.get("Textures & Patterns")
 
 # predict with the model
 print(model.predict_by_url(url='https://samples.clarifai.com/model-gallery/images/textures-patterns-001.jpg'))
+file = open('data.txt',"w")
+file.write(model.predict_by_url(url='https://samples.clarifai.com/model-gallery/images/textures-patterns-001.jpg'));
+file.close();
