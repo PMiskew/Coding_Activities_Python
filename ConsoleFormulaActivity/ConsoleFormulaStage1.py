@@ -15,7 +15,7 @@ height = input("Input height(cm): ")
 height = (int)(height)
 
 #Process
-volume = 1/3*radius*height
+volume = 3.14*radius*radius*height
 
 #Output
 print("The volume of a cylinder with,")
