@@ -22,7 +22,7 @@ while (radius != 0 or height != 0):
 	height = input("\n\tInput height(cm): ")	#input
 	height = (int)(height)						#cast to int
 
-	volume = math.pi*radius*radius*height 
+	volume = math.pi*pow(2,2)*height 
 	volume = round(volume,2)	
 
 
