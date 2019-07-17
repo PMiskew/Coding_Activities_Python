@@ -9,6 +9,7 @@ print("\n\t\t\tV = \u03C0\u00d7radius\u00b2\u00d7height")
 print("\n\tThis program will take as input the radius and height")
 print("\tand print the volume.")
 
+file = open("data.txt","w")
 
 name = input("\n\tWhat is your name: ")		#takes users name
 
@@ -39,7 +40,9 @@ while (radius != 0 or height != 0):
 		print("\t\tRadius = "+str(radius))
 		print("\t\tHeight = "+str(height))
 		print("\t\tThe volume is: "+str(volume)+"\n")	
+		file.write(str(volume)+"\n")
 	else:
 		print("\t\tYou have entered an invalid value.")
 
+file.close()
 print("\t\t\tEND PROGRAM")
