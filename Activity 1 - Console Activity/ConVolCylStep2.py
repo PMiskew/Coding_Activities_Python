@@ -1,36 +1,49 @@
-
-import math #Change 1: import math 
-#Change 4: Include /n (new line) and /t (tab) escape code for formatting
-
-print("Volume of a Cylinder Formula:\n")
+import math
 
 
-#Change 5: Give some context about the formula
 print("\n\tThe volume of a Cylinder is:")
-print("\n\t\t\tV = \u03C0\u00d7radius\u00b2\u00d7height")
+print("\n\t\t\tV = \u03C0 \u00D7 radius\u00B2 \u00D7 height")
 print("\n\tThis program will take as input the radius and height")
 print("\tand print the volume.")
 
 #Input
 #What inputs are needed to calculate the volume of a cylinder?
-name = input("\n\tWhat is your name: ")		#takes users name
+name = input("\n\tWhat is your name: ")
 
-radius = input("\n\tInput radius(cm): ")	#input
-radius = (int)(radius)						#cast to int
+radius = input("\n\tInput radius (cm): ")
+radius = int(radius)
 
-height = input("\n\tInput height(cm): ")	#input
-height = (int)(height)						#cast to int
+height = input("\n\tInput height (cm): ")
+height = int(height)
 #Process
-#What formula is used to calucate the volume of a cylinder?
-
-volume = math.pi*radius*radius*height #Change 1: replace 3.14 with math.pi
-volume = round(volume,2)	#Change 2: round the volume to 2 deimal places. 
-
+#What formula is used to calculate the volume of a cylinder?
+#V = pi * r * r * h
+volume = math.pi * radius * radius * height
+volume = round(volume,2)
 #Output
 #What is important about the output?
-#Change 3: Updated output to be more user friendly
 print("\n\t\tHi "+name+"!")
 print("\n\t\tGive a cylinder with:")
 print("\t\tRadius = "+str(radius))
 print("\t\tHeight = "+str(height))
 print("\t\tThe volume is: "+str(volume)+"\n")	
+
+
+#1) Built in constant for PI in the math module - DONE
+#2) Round the output using the round function in the standard library module - DONE
+#3) Refine the output to make it "nicer" - DONE
+#4) Escape code - DONE
+#	 \n - new line 
+#	 \t - tab
+#	 \u<code> - unicode
+#5) Setup special characters.  
+
+
+
+
+
+
+
+
+
+

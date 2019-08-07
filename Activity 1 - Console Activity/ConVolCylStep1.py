@@ -1,18 +1,18 @@
-
-print("Volume of a Cylinder Formula: ")
 #Input
 #What inputs are needed to calculate the volume of a cylinder?
-name = input("What is your name: ")		#takes users name
+name = input("What is your name: ")
 
-radius = input("Input radius(cm): ")	#input
-radius = (int)(radius)					#cast to int
+radius = input("Input radius (cm): ")
+radius = int(radius)
 
-height = input("Input height(cm): ")	#input
-height = (int)(height)					#cast to int
+height = input("Input height (cm): ")
+height = int(height)
 #Process
-#What formula is used to calucate the volume of a cylinder?
+#What formula is used to calculate the volume of a cylinder?
+#V = pi * r * r * h
+volume = 3.14 * radius * radius * height
 
-volume = 3.14*radius*radius*height
+
 #Output
 #What is important about the output?
-print("The volume is: "+str(volume))
+print("The volume is: ",volume)
