@@ -13,7 +13,7 @@ def calcVolumeCylinder(radius, height):
 		return -1
 
 
-def runMe():
+def runMe(*args):
 
 	r = radiusEntry.get() #gets value and stores in r
 	r = float(r) #casts r to float
@@ -24,12 +24,18 @@ def runMe():
 	h = float(h) #casts r to float
 	heightEntry.delete(0,tk.END) #deltes content of entry tk.END gets last char
 
-	result = calcVolumeCylinder(r,h)
+	volume = calcVolumeCylinder(r,h)
 
 	output.config(state = "normal")
+	output.delete("1.0",tk.END)
+	result = "\n\n\tr\t= "+str(r)+" units\n\th\t= "+str(h)+" units\n\tvolume\t= "+str(volume)+" units\u00B3"
 	output.insert(tk.END, result)
 	output.config(state = "disabled")
 	print(result)
+
+def checkSelect():
+	print(var.get())
+
 
 #Main Code:
 root = tk.Tk()
@@ -62,11 +68,13 @@ btnrun = tk.Button(root, text = "CALCULATE", highlightbackground='#3E4149')
 btnrun.config(fg="blue", command = runMe)
 btnrun.pack(fill = tk.BOTH)
 
-check = tk.Checkbutton(root, text = "High Contrast")
+var = tk.IntVar()
+
+check = tk.Checkbutton(root, text = "High Contrast", variable = var, command = checkSelect)
 check.config(anchor = tk.W)
 check.pack(fill = tk.BOTH)
 
-
+root.bind("<Return>",runMe)
 root.mainloop()
 
 print("End Program")
