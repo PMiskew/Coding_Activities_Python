@@ -52,9 +52,25 @@ def runMe(*args):
 		output.config(state = "disabled")
 		print("BAD INPUT")
 
-	radiusEntry.
-def checkSelect():
-	print(var.get())
+
+def checkSelect(*args):
+	state = var.get()
+
+	if state == 1:
+		root.config(bg = "black")
+		radiusLabel.config(fg = "white", bg = "black")
+		heightLabel.config(fg = "white", bg = "black")
+		radiusEntry.config(fg = "white", bg = "black")
+		heightEntry.config(fg = "white", bg = "black")
+		output.config(fg = "white", bg = "black")
+	else:
+		root.config(bg = "white")
+		radiusLabel.config(fg = "black", bg = "white")
+		heightLabel.config(fg = "black", bg = "white")
+		radiusEntry.config(fg = "black", bg = "white")
+		heightEntry.config(fg = "black", bg = "white")
+		output.config(fg = "black", bg = "white")
+
 
 
 #Main Code:
