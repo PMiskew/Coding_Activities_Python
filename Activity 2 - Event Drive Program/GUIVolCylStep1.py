@@ -5,7 +5,7 @@ import math
 def calcVolumeCylinder(radius, height):
 
 	if radius >= 0 and height >= 0:
-		volume = math.pi*pow(2,2)*height 
+		volume = math.pi*pow(radius,2)*height 
 		volume = round(volume,2)
 		return volume	
 	else:
