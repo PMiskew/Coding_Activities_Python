@@ -32,5 +32,8 @@ print(str1[-3:-1])
 loc = str1.index(" ")
 print(loc)
 
+for letters in str1:
+	print(letters)
+
 
 

@@ -18,6 +18,16 @@ def runMe():
 		num1Label.config(text = nums[0])
 		num2Label.config(text = nums[1])
 		entry.delete(0, tk.END)
+
+		rannum = random.randint(0,4)
+		if rannum == 0:
+			os.system("say good job!")
+		elif rannum == 1:
+			os.system("say great!")
+		elif rannum == 2:
+			os.system("say spectacular!")
+		else:
+			os.system("say keep going!")
 	else:
 		print("ERROR")
 		entry.delete(0,tk.END)

@@ -10,7 +10,7 @@ def runMe():
 	
 	text = textbox.get("1.0",tk.END)
 
-	#When the text is accessed from textbo an enter is placed at the end. 
+	#When the text is accessed from textbox an enter is placed at the end. 
 	#using substring we can access everything except the last character in 
 	#the string which is a special character representing the enter
 	text = text[:-1]
@@ -25,6 +25,9 @@ def runMe():
 def processText(text):
 
 	newText = text
+	#precheck:
+	
+
 	for i in range(len(text) - 1, -1, -1):
 		if (text[i] == " "):
 			word = text[i+1:]
